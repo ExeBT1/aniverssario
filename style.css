@@ -8,7 +8,7 @@
         body {
             background: url('https://i.pinimg.com/736x/16/fb/0d/16fb0d6e14272f28f798db0a65ee00d6.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: #fff; /* Mantém os textos brancos para contraste */
+            color: #fff;
         }
 
         .container {
@@ -20,18 +20,25 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centraliza horizontalmente */
+            align-items: center;
         }
 
         h1, h2 {
-            color: #ffffff; /* Textos brancos para melhor contraste */
+            color: #ffffff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             text-align: center;
         }
 
         .invite-text, .event-info p {
-            color: #000; /* Texto preto sobre fundo amarelo */
+            color: #000;
             text-align: center;
+        }
+
+        /* Animação de pulso no botão */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
 
         .button {
@@ -43,6 +50,11 @@
             cursor: pointer;
             border-radius: 5px;
             box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .button:hover {
+            animation: pulse 0.5s infinite;
         }
 
         .gift-item {
@@ -112,28 +124,7 @@
                 width: 100%;
                 height: 300px;
             }
-			@keyframes pulse {
-				0% { transform: scale(1); }
-				50% { transform: scale(1.1); }
-				100% { transform: scale(1); }
-			}
-
-			.button {
-				background: #ff0000;
-				color: #fff;
-				border: none;
-				padding: 15px 25px;
-				font-size: 16px;
-				cursor: pointer;
-				border-radius: 5px;
-				box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
-				transition: transform 0.3s ease;
-			}
-
-			.button:hover {
-				animation: pulse 0.5s infinite;
-			}
-					}
+        }
     </style>
 </head>
 <body>
@@ -141,7 +132,9 @@
     <div class="container">
         <h1>🎉 Aniversário do Matheus - 28 anos 🎉</h1>
         <p class="invite-text">Venha comemorar comigo! Teremos muita diversão, boa comida e grandes momentos. Não fique de fora!</p>
-        <button class="button">Confirmar Presença ✅</button>
+        
+        <!-- Botão que toca o som e pulsa ao passar o mouse -->
+        <button class="button" onclick="playSound()">Confirmar Presença ✅</button>
 
         <h2>Lista de Presentes 🎁</h2>
         
@@ -151,7 +144,7 @@
                 <h3>Durateston 30mg + 60mg + 100mg + 60mg Apsen 1ml 1 Ampola</h3>
                 <p>Para que eu possa ficar monstrão!</p>
             </div>
-            <button class="button">Enviar Presente</button>
+            <button class="button" onclick="playSound()">Enviar Presente</button>
         </div>
 
         <div class="gift-item">
@@ -160,7 +153,7 @@
                 <h3>Egh Equinos Suplemento Ganho, Massa Muscular 10ml Potros</h3>
                 <p>Para o máximo desempenho físico!</p>
             </div>
-            <button class="button">Enviar Presente</button>
+            <button class="button" onclick="playSound()">Enviar Presente</button>
         </div>
 
         <div class="gift-item">
@@ -169,7 +162,7 @@
                 <h3>Monster Branco Ilimitado ☕</h3>
                 <p>Para nunca mais sentir sono!</p>
             </div>
-            <button class="button">Enviar Presente</button>
+            <button class="button" onclick="playSound()">Enviar Presente</button>
         </div>
 
         <div class="event-info">
@@ -192,6 +185,16 @@
         </div>
 
     </div>
+
+    <!-- Áudio escondido -->
+    <audio id="audio" src="obrigado.mp3"></audio>
+
+    <!-- Script para tocar o som -->
+    <script>
+        function playSound() {
+            document.getElementById("audio").play();
+        }
+    </script>
 
 </body>
 </html>
