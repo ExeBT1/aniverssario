@@ -133,6 +133,11 @@
         <h1>🎉 Aniversário do Matheus - 28 anos 🎉</h1>
         <p class="invite-text">Venha comemorar comigo! Teremos muita diversão, boa comida e grandes momentos. Não fique de fora!</p>
 
+        <!-- Botão de confirmar presença -->
+        <button class="button" onclick="playSound('obrigado.mp3')">
+            Confirmar Presença ✅
+        </button>
+
         <h2>Lista de Presentes 🎁</h2>
 
         <div class="gift-item">
@@ -147,12 +152,12 @@
         </div>
 
         <div class="gift-item">
-            <img src="https://http2.mlstatic.com/D_NQ_NP_933080-MLB82293837396_022025-O-egh-equinos-suplemento-ganho-massa-muscular-10ml-potros.webp" alt="Egh Equinos">
+            <img src="https://landerlan.com.br/img/produto/landertropin-100-UI-HGH.jpg" alt="Gh">
             <div class="gift-info">
-                <h3>Egh Equinos - Ganho de Massa Muscular (10ml)</h3>
-                <p>Para o máximo desempenho físico!</p>
+                <h3>Landertropin GH 100ui</h3>
+                <p>100ui Caixa Grande | LANDERLAN Produto com certificado GMP</p>
             </div>
-            <button class="button" onclick="playSoundAndRedirect('ogro.mp3', 'https://produto.mercadolivre.com.br/egh-equinos-ganho-massa-muscular-10ml-potros')">
+            <button class="button" onclick="playSoundAndRedirect('ogro.mp3', 'https://landerlan.com.br/produtos/landertropin-100ui')">
                 Enviar Presente
             </button>
         </div>
@@ -163,7 +168,7 @@
                 <h3>Monster Branco Ilimitado ☕</h3>
                 <p>Para nunca mais sentir sono!</p>
             </div>
-            <button class="button" onclick="playSoundAndRedirect('tutu.mp3', 'https://produto.mercadolivre.com.br/monster-branco-ilimitado')">
+            <button class="button" onclick="playSoundAndRedirect('tutu.mp3', 'https://www.amazon.com.br/Energ%C3%A9tico-Monster-Energy-Ultra-473ml/dp/B076X6MJCP/ref=asc_df_B076X6MJCP?mcid=9b367cf1d2cf3d90b61a8212e365e7bf&tag=googleshopp00-20&linkCode=df0&hvadid=709974871616&hvpos=&hvnetw=g&hvrand=12130047117517115934&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9100598&hvtargid=pla-1232251441826&psc=1&language=pt_BR&gad_source=1')">
                 Enviar Presente
             </button>
         </div>
@@ -182,6 +187,11 @@
     </div>
 
     <script>
+        function playSound(soundFile) {
+            let audio = new Audio(soundFile);
+            audio.play();
+        }
+
         function playSoundAndRedirect(soundFile, url) {
             let audio = new Audio(soundFile);
             audio.play();
