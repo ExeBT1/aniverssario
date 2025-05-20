@@ -132,53 +132,40 @@
     <div class="container">
         <h1>🎉 Aniversário do Matheus - 28 anos 🎉</h1>
         <p class="invite-text">Venha comemorar comigo! Teremos muita diversão, boa comida e grandes momentos. Não fique de fora!</p>
-        
-        <!-- Botão que toca o som e pulsa ao passar o mouse -->
-        <button class="button" onclick="playSound()">Confirmar Presença ✅</button>
 
         <h2>Lista de Presentes 🎁</h2>
-        
+
         <div class="gift-item">
-            <img src="https://static.farmaciabrasil.com.py/upload/product/landerlan-gold-durateston.jpg" alt="Presente Fictício 1">
+            <img src="https://static.farmaciabrasil.com.py/upload/product/landerlan-gold-durateston.jpg" alt="Durateston">
             <div class="gift-info">
-                <h3>Landerlan Gold Durateston com 10ml</h3>
+                <h3>Landerlan Gold Durateston - 10ml</h3>
                 <p>Para que eu possa ficar monstrão!</p>
             </div>
             <button class="button" onclick="playSoundAndRedirect('bomba.mp3', 'https://www.farmaciabrasil.com.py/product/landerlan-gold-durateston-com-10ml')">
-			Enviar Presente
-			</button>
-
-			<script>
-				function playSoundAndRedirect(soundFile, url) {
-					let audio = new Audio(soundFile);
-					audio.play();
-
-					// Aguarda o tempo do som antes de abrir o link
-					audio.onended = function() {
-						window.open(url, '_blank');
-					};
-				}
-			</script>
+                Enviar Presente
+            </button>
         </div>
-	
 
         <div class="gift-item">
-            <img src="https://http2.mlstatic.com/D_NQ_NP_933080-MLB82293837396_022025-O-egh-equinos-suplemento-ganho-massa-muscular-10ml-potros.webp" alt="Presente Fictício 2">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_933080-MLB82293837396_022025-O-egh-equinos-suplemento-ganho-massa-muscular-10ml-potros.webp" alt="Egh Equinos">
             <div class="gift-info">
-                <h3>Egh Equinos Suplemento Ganho, Massa Muscular 10ml Potros</h3>
+                <h3>Egh Equinos - Ganho de Massa Muscular (10ml)</h3>
                 <p>Para o máximo desempenho físico!</p>
             </div>
-            <button class="button" onclick="playSound(ogro.mp3)">Enviar Presente</button>
+            <button class="button" onclick="playSoundAndRedirect('ogro.mp3', 'https://produto.mercadolivre.com.br/egh-equinos-ganho-massa-muscular-10ml-potros')">
+                Enviar Presente
+            </button>
         </div>
 
-
         <div class="gift-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkB6aE9SJ7XEXdVVFRO5LwQDt0FFEVTgS-1w&amp;s" alt="Presente Fictício 3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkB6aE9SJ7XEXdVVFRO5LwQDt0FFEVTgS-1w&s" alt="Monster Branco">
             <div class="gift-info">
                 <h3>Monster Branco Ilimitado ☕</h3>
                 <p>Para nunca mais sentir sono!</p>
             </div>
-            <button class="button" onclick="playSound(tutu.mp3)">Enviar Presente</button>
+            <button class="button" onclick="playSoundAndRedirect('tutu.mp3', 'https://produto.mercadolivre.com.br/monster-branco-ilimitado')">
+                Enviar Presente
+            </button>
         </div>
 
         <div class="event-info">
@@ -190,23 +177,20 @@
 
         <div class="map-container">
             <h2>📍 Como Chegar</h2>
-            <iframe 
-                width="800" 
-                height="400" 
-                style="border:0; border-radius:10px; margin-top:10px;"
-                loading="lazy"
-                allowfullscreen
-                src="https://maps.google.com/maps?q=Av.%20Dr.%20H%C3%A9lio%20Palermo,%202837%20-%20Esta%C3%A7%C3%A3o,%20Franca%20-%20SP,%2014400-008&output=embed">
-            </iframe>
+            <iframe width="800" height="400" style="border:0; border-radius:10px; margin-top:10px;" loading="lazy" allowfullscreen src="https://maps.google.com/maps?q=Av.%20Dr.%20H%C3%A9lio%20Palermo,%202837%20-%20Esta%C3%A7%C3%A3o,%20Franca%20-%20SP,%2014400-008&output=embed"></iframe>
         </div>
-
     </div>
 
-    <!-- Áudio escondido -->
-    <audio id="audio" src="obrigado.mp3"></audio>
-	<audio id="audio" src="bomba.mp3"></audio>
-	<audio id="audio" src="ogro.mp3"></audio>
-	<audio id="audio" src="tutu.mp3"></audio>
+    <script>
+        function playSoundAndRedirect(soundFile, url) {
+            let audio = new Audio(soundFile);
+            audio.play();
+            
+            audio.onended = function() {
+                window.open(url, '_blank');
+            };
+        }
+    </script>
 
 </body>
 </html>
