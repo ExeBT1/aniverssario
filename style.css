@@ -53,6 +53,13 @@ h1, h2 {
     animation: pulse 0.5s infinite;
 }
 
+.confirm-button {
+    display: block;
+    margin: 20px auto; /* Centraliza horizontalmente */
+    text-align: center; /* Garante alinhamento correto */
+}
+
+
 /* Estilo dos itens de presente */
 .gift-item {
     display: flex;
