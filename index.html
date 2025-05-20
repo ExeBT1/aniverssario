@@ -139,13 +139,28 @@
         <h2>Lista de Presentes 🎁</h2>
         
         <div class="gift-item">
-            <img src="https://drogariasp.vteximg.com.br/arquivos/ids/953473-1000-1000/de-referencia-tarja-vermelha-em-ampola-sao-paulo.jpg?v=6382980077152700000" alt="Presente Fictício 1">
+            <img src="https://static.farmaciabrasil.com.py/upload/product/landerlan-gold-durateston.jpg" alt="Presente Fictício 1">
             <div class="gift-info">
-                <h3>Durateston 30mg + 60mg + 100mg + 60mg Apsen 1ml 1 Ampola</h3>
+                <h3>Landerlan Gold Durateston com 10ml</h3>
                 <p>Para que eu possa ficar monstrão!</p>
             </div>
-            <button class="button" onclick="playSound(bomba.mp3)">Enviar Presente</button>
+            <button class="button" onclick="playSoundAndRedirect('bomba.mp3', 'https://www.farmaciabrasil.com.py/product/landerlan-gold-durateston-com-10ml')">
+			Enviar Presente
+			</button>
+
+			<script>
+				function playSoundAndRedirect(soundFile, url) {
+					let audio = new Audio(soundFile);
+					audio.play();
+
+					// Aguarda o tempo do som antes de abrir o link
+					audio.onended = function() {
+						window.open(url, '_blank');
+					};
+				}
+			</script>
         </div>
+	
 
         <div class="gift-item">
             <img src="https://http2.mlstatic.com/D_NQ_NP_933080-MLB82293837396_022025-O-egh-equinos-suplemento-ganho-massa-muscular-10ml-potros.webp" alt="Presente Fictício 2">
@@ -155,6 +170,7 @@
             </div>
             <button class="button" onclick="playSound(ogro.mp3)">Enviar Presente</button>
         </div>
+
 
         <div class="gift-item">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkB6aE9SJ7XEXdVVFRO5LwQDt0FFEVTgS-1w&amp;s" alt="Presente Fictício 3">
@@ -191,13 +207,6 @@
 	<audio id="audio" src="bomba.mp3"></audio>
 	<audio id="audio" src="ogro.mp3"></audio>
 	<audio id="audio" src="tutu.mp3"></audio>
-
-    <!-- Script para tocar o som -->
-    <script>
-        function playSound() {
-            document.getElementById("audio").play();
-        }
-    </script>
 
 </body>
 </html>
