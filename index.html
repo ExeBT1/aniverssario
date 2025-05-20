@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-	<link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aniversário do Matheus - 28 anos 🎉</title>
@@ -9,25 +8,37 @@
         body {
             background: url('https://i.pinimg.com/736x/16/fb/0d/16fb0d6e14272f28f798db0a65ee00d6.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: #fff; /* Mantém os textos brancos para contraste */
+            color: #fff;
         }
 
         .container {
             max-width: 800px;
             margin: 20px auto;
-            background: rgba(255, 204, 0, 0.85); /* Fundo amarelo mais opaco */
             padding: 20px;
+            background: rgba(255, 204, 0, 0.85);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         h1, h2 {
-            color: #ffffff; /* Textos brancos para melhor contraste */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona leve sombra */
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
         }
 
         .invite-text, .event-info p {
-            color: #000; /* Texto preto sobre fundo amarelo */
+            color: #000;
+            text-align: center;
+        }
+
+        /* Animação de pulso no botão */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
 
         .button {
@@ -39,6 +50,11 @@
             cursor: pointer;
             border-radius: 5px;
             box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .button:hover {
+            animation: pulse 0.5s infinite;
         }
 
         .gift-item {
@@ -47,10 +63,11 @@
             justify-content: space-between;
             padding: 10px;
             border-bottom: 1px solid #ddd;
-            background: rgba(255, 255, 255, 0.85); /* Fundo branco mais transparente */
+            background: rgba(255, 255, 255, 0.85);
             color: #000;
             margin: 10px 0;
             border-radius: 10px;
+            width: 100%;
         }
 
         .gift-item img {
@@ -65,20 +82,48 @@
         }
 
         .event-info {
-            background: rgba(255, 255, 255, 0.7); /* Fundo branco mais transparente */
+            background: rgba(255, 255, 255, 0.7);
             color: #000;
             padding: 15px;
             border-radius: 10px;
             margin-top: 20px;
+            width: 100%;
+            text-align: center;
         }
 
         .map-container {
             margin-top: 20px;
+            text-align: center;
         }
 
         .map-link {
             color: #ffcc00;
             font-weight: bold;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                max-width: 90%;
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 12px 20px;
+            }
+
+            .gift-item img {
+                max-width: 80px;
+            }
+
+            .map-container iframe {
+                width: 100%;
+                height: 300px;
+            }
         }
     </style>
 </head>
@@ -87,7 +132,9 @@
     <div class="container">
         <h1>🎉 Aniversário do Matheus - 28 anos 🎉</h1>
         <p class="invite-text">Venha comemorar comigo! Teremos muita diversão, boa comida e grandes momentos. Não fique de fora!</p>
-        <button class="button">Confirmar Presença ✅</button>
+        
+        <!-- Botão que toca o som e pulsa ao passar o mouse -->
+        <button class="button" onclick="playSound()">Confirmar Presença ✅</button>
 
         <h2>Lista de Presentes 🎁</h2>
         
@@ -97,7 +144,7 @@
                 <h3>Durateston 30mg + 60mg + 100mg + 60mg Apsen 1ml 1 Ampola</h3>
                 <p>Para que eu possa ficar monstrão!</p>
             </div>
-            <button class="button">Enviar Presente</button>
+            <button class="button" onclick="playSound()">Enviar Presente</button>
         </div>
 
         <div class="gift-item">
@@ -106,7 +153,7 @@
                 <h3>Egh Equinos Suplemento Ganho, Massa Muscular 10ml Potros</h3>
                 <p>Para o máximo desempenho físico!</p>
             </div>
-            <button class="button">Enviar Presente</button>
+            <button class="button" onclick="playSound()">Enviar Presente</button>
         </div>
 
         <div class="gift-item">
@@ -115,7 +162,7 @@
                 <h3>Monster Branco Ilimitado ☕</h3>
                 <p>Para nunca mais sentir sono!</p>
             </div>
-            <button class="button">Enviar Presente</button>
+            <button class="button" onclick="playSound()">Enviar Presente</button>
         </div>
 
         <div class="event-info">
@@ -125,7 +172,6 @@
             <p>📍 Endereço: Av. Dr. Hélio Palermo, 2837 - Estação, Franca - SP, 14400-008</p>
         </div>
 
-        <!-- Mapa -->
         <div class="map-container">
             <h2>📍 Como Chegar</h2>
             <iframe 
@@ -139,6 +185,16 @@
         </div>
 
     </div>
+
+    <!-- Áudio escondido -->
+    <audio id="audio" src="obrigado.mp3"></audio>
+
+    <!-- Script para tocar o som -->
+    <script>
+        function playSound() {
+            document.getElementById("audio").play();
+        }
+    </script>
 
 </body>
 </html>
