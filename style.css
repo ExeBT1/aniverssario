@@ -1,0 +1,76 @@
+    <style>
+        body {
+            background: url('https://i.pinimg.com/736x/16/fb/0d/16fb0d6e14272f28f798db0a65ee00d6.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff; /* Mantém os textos brancos para contraste */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgba(255, 204, 0, 0.85); /* Fundo amarelo mais opaco */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        h1, h2 {
+            color: #ffffff; /* Textos brancos para melhor contraste */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adiciona leve sombra */
+        }
+
+        .invite-text, .event-info p {
+            color: #000; /* Texto preto sobre fundo amarelo */
+        }
+
+        .button {
+            background: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 15px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .gift-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            background: rgba(255, 255, 255, 0.85); /* Fundo branco mais transparente */
+            color: #000;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+
+        .gift-item img {
+            max-width: 100px;
+            border-radius: 10px;
+        }
+
+        .gift-info {
+            flex-grow: 1;
+            text-align: left;
+            margin-left: 15px;
+        }
+
+        .event-info {
+            background: rgba(255, 255, 255, 0.7); /* Fundo branco mais transparente */
+            color: #000;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .map-container {
+            margin-top: 20px;
+        }
+
+        .map-link {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+		</style>
